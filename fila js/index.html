@@ -1,89 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Execução de Processos</title>
-    <style>
-      .processo {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        margin: 5px;
-      }
-
-      .processo-1 {
-        background-color: red;
-      }
-
-      .processo-2 {
-        background-color: blue;
-      }
-
-      .processo-3 {
-        background-color: green;
-      }
-
-      .processo-4 {
-        background-color: rgb(119, 128, 0);
-      }
-
-      .processo-5 {
-        background-color: rgb(128, 0, 70);
-      }
-
-      .finalizados {
-        margin-top: 20px;
-      }
-    </style>
-    <script src="fila.js"></script>
-  </head>
-  <body>
-    <h1>Execução de Processos</h1>
-    <div id="processos"></div>
-    <div class="finalizados">
+<head>
+  <title>Execução de Processos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Execução de Processos</h1>
+  <div class="processos-container">
+    <div class="processos">
+      <h2>Processos em Execução</h2>
+      <div id="processos"></div>
+    </div>
+    <div class="processos-finalizados">
       <h2>Processos Finalizados</h2>
       <div id="processos-finalizados"></div>
     </div>
-    <button id="btn-iniciar">Iniciar Execução</button>
+  </div>
 
-    <script>
-      async function executarProcessos() {
-        btnIniciar.disabled = true;
+  <table id="tabela-processos">
+    <tr>
+      <th>ID</th>
+      <th>Tempo de Execução</th>
+    </tr>
+  </table>
 
-        const roundRobin = new RoundRobin(3);
-        roundRobin.adicionarProcesso(1, 10);
-        roundRobin.adicionarProcesso(2, 4);
-        roundRobin.adicionarProcesso(3, 6);
-        roundRobin.adicionarProcesso(4, 5);
-        roundRobin.adicionarProcesso(5, 12);
+  <button id="btn-round-robin">Executar Round Robin</button>
+  <button id="btn-fifo">Executar FIFO</button>
 
-        const processosElement = document.getElementById("processos");
-        const processosFinalizadosElement = document.getElementById("processos-finalizados");
 
-        processosElement.innerHTML = "";
-        processosFinalizadosElement.innerHTML = "";
-
-        while (!roundRobin.fila.isEmpty()) {
-          const processo = roundRobin.fila.pop();
-          const div = document.createElement("div");
-          div.classList.add("processo", `processo-${processo.id}`);
-          processosElement.appendChild(div);
-          await sleep(1000);
-
-          if (processo.tempoExecucao > roundRobin.quantum) {
-            processo.tempoExecucao -= roundRobin.quantum;
-            roundRobin.fila.add(processo);
-          } else {
-            const finalizadoDiv = document.createElement("div");
-            finalizadoDiv.classList.add("processo", `processo-${processo.id}`);
-            processosFinalizadosElement.appendChild(finalizadoDiv);
-          }
-        }
-
-        btnIniciar.disabled = false;
-      }
-
-      const btnIniciar = document.getElementById("btn-iniciar");
-      btnIniciar.addEventListener("click", executarProcessos);
-    </script>
-  </body>
+  <script src="fila.js" type="module"></script>
+  <script src="RoundRobin.js" type="module"></script>
+  <script src="fifo.js"  type="module"></script>
+  <script src="main.js" type="module"></script>
+</body>
 </html>

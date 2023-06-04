@@ -1,0 +1,30 @@
+.processo {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+  }
+
+  .processo-1 {
+    background-color: red;
+  }
+
+  .processo-2 {
+    background-color: blue;
+  }
+
+  .processo-3 {
+    background-color: green;
+  }
+
+  .processo-4 {
+    background-color: rgb(119, 128, 0);
+  }
+
+  .processo-5 {
+    background-color: rgb(128, 0, 70);
+  }
+
+  .finalizados {
+    margin-top: 20px;
+  }
