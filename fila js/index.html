@@ -30,18 +30,22 @@
         background-color: rgb(128, 0, 70);
       }
 
+      .finalizados {
+        margin-top: 20px;
+      }
     </style>
     <script src="fila.js"></script>
   </head>
   <body>
     <h1>Execução de Processos</h1>
     <div id="processos"></div>
+    <div class="finalizados">
+      <h2>Processos Finalizados</h2>
+      <div id="processos-finalizados"></div>
+    </div>
     <button id="btn-iniciar">Iniciar Execução</button>
 
     <script>
-      const btnIniciar = document.getElementById("btn-iniciar");
-      btnIniciar.addEventListener("click", executarProcessos);
-
       async function executarProcessos() {
         btnIniciar.disabled = true;
 
@@ -52,9 +56,11 @@
         roundRobin.adicionarProcesso(4, 5);
         roundRobin.adicionarProcesso(5, 12);
 
-
         const processosElement = document.getElementById("processos");
-        processosElement.innerHTML = ""; // Limpar a lista de processos antes de iniciar a execução
+        const processosFinalizadosElement = document.getElementById("processos-finalizados");
+
+        processosElement.innerHTML = "";
+        processosFinalizadosElement.innerHTML = "";
 
         while (!roundRobin.fila.isEmpty()) {
           const processo = roundRobin.fila.pop();
@@ -66,11 +72,18 @@
           if (processo.tempoExecucao > roundRobin.quantum) {
             processo.tempoExecucao -= roundRobin.quantum;
             roundRobin.fila.add(processo);
+          } else {
+            const finalizadoDiv = document.createElement("div");
+            finalizadoDiv.classList.add("processo", `processo-${processo.id}`);
+            processosFinalizadosElement.appendChild(finalizadoDiv);
           }
         }
 
         btnIniciar.disabled = false;
       }
+
+      const btnIniciar = document.getElementById("btn-iniciar");
+      btnIniciar.addEventListener("click", executarProcessos);
     </script>
   </body>
 </html>
