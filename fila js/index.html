@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Execução de Processos</title>
+    <style>
+      .processo {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin: 5px;
+      }
+
+      .processo-1 {
+        background-color: red;
+      }
+
+      .processo-2 {
+        background-color: blue;
+      }
+
+      .processo-3 {
+        background-color: green;
+      }
+
+      .processo-4 {
+        background-color: rgb(119, 128, 0);
+      }
+
+      .processo-5 {
+        background-color: rgb(128, 0, 70);
+      }
+
+    </style>
+    <script src="fila.js"></script>
+  </head>
+  <body>
+    <h1>Execução de Processos</h1>
+    <div id="processos"></div>
+    <button id="btn-iniciar">Iniciar Execução</button>
+
+    <script>
+      const btnIniciar = document.getElementById("btn-iniciar");
+      btnIniciar.addEventListener("click", executarProcessos);
+
+      async function executarProcessos() {
+        btnIniciar.disabled = true;
+
+        const roundRobin = new RoundRobin(3);
+        roundRobin.adicionarProcesso(1, 10);
+        roundRobin.adicionarProcesso(2, 4);
+        roundRobin.adicionarProcesso(3, 6);
+        roundRobin.adicionarProcesso(4, 5);
+        roundRobin.adicionarProcesso(5, 12);
+
+
+        const processosElement = document.getElementById("processos");
+        processosElement.innerHTML = ""; // Limpar a lista de processos antes de iniciar a execução
+
+        while (!roundRobin.fila.isEmpty()) {
+          const processo = roundRobin.fila.pop();
+          const div = document.createElement("div");
+          div.classList.add("processo", `processo-${processo.id}`);
+          processosElement.appendChild(div);
+          await sleep(1000);
+
+          if (processo.tempoExecucao > roundRobin.quantum) {
+            processo.tempoExecucao -= roundRobin.quantum;
+            roundRobin.fila.add(processo);
+          }
+        }
+
+        btnIniciar.disabled = false;
+      }
+    </script>
+  </body>
+</html>

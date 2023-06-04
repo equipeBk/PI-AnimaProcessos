@@ -91,7 +91,7 @@ class Fila {
 }
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 class Processo {
@@ -113,37 +113,26 @@ class RoundRobin {
   }
 
   async executar() {
+    const processosElement = document.getElementById("processos");
+
     while (!this.fila.isEmpty()) {
       const processo = this.fila.pop();
-      console.log(`Round Robin Executando processo ${processo.id}`);
+      const li = document.createElement("li");
+      li.textContent = `Round Robin Executando processo ${processo.id}`;
+      processosElement.appendChild(li);
       await sleep(2000);
 
       if (processo.tempoExecucao > this.quantum) {
         processo.tempoExecucao -= this.quantum;
-        console.log(`Round Robin Processo ${processo.id} parcialmente executado. Tempo restante: ${processo.tempoExecucao}`);
+        const liRestante = document.createElement("li");
+        liRestante.textContent = `Round Robin Processo ${processo.id} parcialmente executado. Tempo restante: ${processo.tempoExecucao}`;
+        processosElement.appendChild(liRestante);
         this.fila.add(processo);
       } else {
-        console.log(`Round Robin Processo ${processo.id} completamente executado.`);
+        const liCompleto = document.createElement("li");
+        liCompleto.textContent = `Round Robin Processo ${processo.id} completamente executado.`;
+        processosElement.appendChild(liCompleto);
       }
-    }
-  }
-}
-class Fifo {
-  constructor() {
-    this.fila = new Fila();
-  }
-
-  adicionarProcesso(id, tempoExecucao) {
-    const processo = new Processo(id, tempoExecucao);
-    this.fila.add(processo);
-  }
-
-  async executar() {
-    while (!this.fila.isEmpty()) {
-      const processo = this.fila.pop();
-      console.log(`FIFO Executando processo ${processo.id}`);
-      await sleep(2000);
-      console.log(`FIFO Processo ${processo.id} completamente executado.`);
     }
   }
 }
