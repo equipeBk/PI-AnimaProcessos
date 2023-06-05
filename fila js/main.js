@@ -1,10 +1,11 @@
 import { RoundRobin } from "./RoundRobin.js";
 import { FIFO } from "./fifo.js";
 
+const roundRobin = new RoundRobin(2);
  document.getElementById("btn-round-robin").addEventListener("click", async () => {
       document.getElementById("btn-round-robin").disabled = true;
 
-      const roundRobin = new RoundRobin(2);
+      roundRobin.limparTabelaProcessos();
       roundRobin.adicionarProcesso(1, 10);
       roundRobin.adicionarProcesso(2, 4);
       roundRobin.adicionarProcesso(3, 6);
@@ -13,10 +14,9 @@ import { FIFO } from "./fifo.js";
 
       const processosElement = document.getElementById("processos");
       const processosFinalizadosElement = document.getElementById("processos-finalizados");
-
-      processosElement.innerHTML = "";
+      
+    processosElement.innerHTML = "";
       processosFinalizadosElement.innerHTML = "";
-
       while (!roundRobin.fila.isEmpty()) {
         const processo = roundRobin.fila.pop();
         const div = document.createElement("div");
@@ -33,29 +33,33 @@ import { FIFO } from "./fifo.js";
           processosFinalizadosElement.appendChild(finalizadoDiv);
         }
       }
-
+      
       document.getElementById("btn-round-robin").disabled = false;
     });
 
-    // Código para executar o FIFO
-    document.getElementById("btn-fifo").addEventListener("click", async () => {
-      document.getElementById("btn-fifo").disabled = true;
+  // Código para executar o FIFO
+document.getElementById("btn-fifo").addEventListener("click", async () => {
+  document.getElementById("btn-fifo").disabled = true;
 
-      const fifo = new FIFO();
-      fifo.adicionarProcesso(1, 10);
-      fifo.adicionarProcesso(2, 4);
-      fifo.adicionarProcesso(3, 6);
-      fifo.adicionarProcesso(4, 5);
-      fifo.adicionarProcesso(5, 12);
+  const fifo = new FIFO();
+  fifo.limparTabelaProcessos();
+  fifo.adicionarProcesso(1, 10);
+  fifo.adicionarProcesso(2, 4);
+  fifo.adicionarProcesso(3, 6);
+  fifo.adicionarProcesso(4, 5);
+  fifo.adicionarProcesso(5, 12);
 
-      const processosElement = document.getElementById("processos");
+  const processosElement = document.getElementById("processos");
+  const processosFinalizadosElement = document.getElementById("processos-finalizados");
 
-      processosElement.innerHTML = "";
+  processosElement.innerHTML = "";
+  processosFinalizadosElement.innerHTML = ""; // Limpar os processos finalizados
 
-      await fifo.executar();
+  await fifo.executar();
 
-      document.getElementById("btn-fifo").disabled = false;
-    });
+  document.getElementById("btn-fifo").disabled = false;
+});
+
 
     function sleep(ms) {
       return new Promise((resolve) => setTimeout(resolve, ms));

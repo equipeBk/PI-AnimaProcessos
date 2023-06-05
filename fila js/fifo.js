@@ -20,12 +20,14 @@ export class FIFO {
 
     // Atualizar a tabela de processos
     const tabelaProcessosElement = document.getElementById("tabela-processos");
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${id}</td>
-      <td>${tempoExecucao}</td>
-    `;
-    tabelaProcessosElement.appendChild(tr);
+const tr = document.createElement("tr");
+tr.innerHTML = `
+  <td>${id}</td>
+  <td>${tempoExecucao}</td>
+`;
+tabelaProcessosElement.querySelector("tbody").appendChild(tr);
+
+
   }
 
   async executar() {
@@ -58,6 +60,21 @@ export class FIFO {
       processosElement.appendChild(processo);
     });
   }
+
+   limparTabelaProcessos() {
+      const tabelaProcessosElement = document.getElementById("tabela-processos");
+      tabelaProcessosElement.querySelector("tbody").innerHTML = "";
+    }
+    
+    atualizarTabelaProcessos(id, tempoExecucao) {
+      const tabelaProcessosElement = document.getElementById("tabela-processos");
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${id}</td>
+        <td>${tempoExecucao}</td>
+      `;
+      tabelaProcessosElement.querySelector("tbody").appendChild(tr);
+    }
 }
 
 function sleep(ms) {

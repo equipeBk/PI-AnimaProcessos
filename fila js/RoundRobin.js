@@ -1,4 +1,5 @@
 import { Fila } from "./fila.js";
+import { FIFO } from "./fifo.js";
 
 class Processo {
   constructor(id, tempoExecucao) {
@@ -17,6 +18,13 @@ export class RoundRobin {
       const tempoExecucao = Math.ceil(Math.random() * tempoExecucaoMax);
       const processo = new Processo(id, tempoExecucao);
       this.fila.add(processo);
+      const tabelaProcessosElement = document.getElementById("tabela-processos");
+const tr = document.createElement("tr");
+tr.innerHTML = `
+  <td>${id}</td>
+  <td>${tempoExecucao}</td>
+`;
+tabelaProcessosElement.querySelector("tbody").appendChild(tr);
     }
     
     async executar() {
@@ -42,4 +50,20 @@ export class RoundRobin {
         }
       }
     }
+    limparTabelaProcessos() {
+  const tabelaProcessosElement = document.getElementById("tabela-processos");
+  const tbody = tabelaProcessosElement.querySelector("tbody");
+  tbody.innerHTML = "";
+}
+    
+    atualizarTabelaProcessos(id, tempoExecucao) {
+      const tabelaProcessosElement = document.getElementById("tabela-processos");
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${id}</td>
+        <td>${tempoExecucao}</td>
+      `;
+      tabelaProcessosElement.querySelector("tbody").appendChild(tr);
+    }
+    
   }
