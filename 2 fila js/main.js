@@ -5,7 +5,6 @@ const roundRobin1 = new RoundRobin(2);
  document.getElementById("btn-round-robin").addEventListener("click", async () => {
       document.getElementById("btn-round-robin").disabled = true;
 
-      roundRobin1.limparTabelaProcessos();
       roundRobin1.adicionarProcesso(1, 10);
       roundRobin1.adicionarProcesso(2, 4);
       roundRobin1.adicionarProcesso(3, 6);
