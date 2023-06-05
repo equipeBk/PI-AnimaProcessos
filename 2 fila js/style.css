@@ -1,0 +1,54 @@
+.processo {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+  }
+
+  .processo-1 {
+    background-color: red;
+  }
+
+  .processo-2 {
+    background-color: blue;
+  }
+
+  .processo-3 {
+    background-color: green;
+  }
+
+  .processo-4 {
+    background-color: rgb(119, 128, 0);
+  }
+
+  .processo-5 {
+    background-color: rgb(128, 0, 70);
+  }
+
+  .processo-6 {
+    background-color: rgb(53, 11, 11);
+  }
+
+  .processo-7 {
+    background-color: rgb(153, 107, 65);
+  }
+
+  .processo-8 {
+    background-color: rgb(158, 45, 1);
+  }
+
+  .processo-9 {
+    background-color: rgba(23, 64, 80, 0.61);
+  }
+
+  .processo-10 {
+    background-color: rgb(40, 2, 48);
+  }
+
+  .processo-11 {
+    background-color: rgb(153, 79, 168);
+  }
+
+  .finalizados {
+    margin-top: 20px;
+  }
