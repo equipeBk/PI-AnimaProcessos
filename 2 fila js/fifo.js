@@ -22,6 +22,7 @@ export class FIFO {
     const tabelaProcessosElement = document.getElementById("tabela-processos");
 const tr = document.createElement("tr");
 tr.innerHTML = `
+<td class="processo ${cor}"></td>
   <td>${id}</td>
   <td>${tempoExecucao}</td>
 `;
@@ -77,6 +78,7 @@ tabelaProcessosElement.querySelector("tbody").appendChild(tr);
         const thead = document.createElement("thead");
         const headerRow = document.createElement("tr");
         headerRow.innerHTML = `
+        <td>cor</td>
           <th>ID</th>
           <th>Tempo de Execução</th>
         `;
@@ -87,6 +89,7 @@ tabelaProcessosElement.querySelector("tbody").appendChild(tr);
       const tbody = tabelaProcessosElement.querySelector("tbody");
       const tr = document.createElement("tr");
       tr.innerHTML = `
+      <td>${cor}</td>
         <td>${id}</td>
         <td>${tempoExecucao}</td>
       `;

@@ -2,9 +2,10 @@ import { Fila } from "./fila.js";
 import { FIFO } from "./fifo.js";
 
 class Processo {
-  constructor(id, tempoExecucao) {
+  constructor(id, tempoExecucao, cor) {
     this.id = id;
     this.tempoExecucao = tempoExecucao;
+    this.cor = cor;
   }
 }
 
@@ -12,19 +13,23 @@ export class RoundRobin {
   constructor(quantum) {
     this.fila = new Fila();
     this.quantum = quantum;
+
   }
   
-    adicionarProcesso(id, tempoExecucaoMax) {
+    adicionarProcesso(id, tempoExecucaoMax, cor) {
       const tempoExecucao = Math.ceil(Math.random() * tempoExecucaoMax);
       const processo = new Processo(id, tempoExecucao);
       this.fila.add(processo);
-      const tabelaProcessosElement = document.getElementById("tabela-processos");
-const tr = document.createElement("tr");
-tr.innerHTML = `
-  <td>${id}</td>
-  <td>${tempoExecucao}</td>
-`;
-tabelaProcessosElement.querySelector("tbody").appendChild(tr);
+        // Atualizar a tabela de processos
+    const tabelaProcessosElement = document.getElementById("tabela-processos");
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+    <td class="processo ${cor}"></td>
+      <td>${id}</td>
+      <td>${tempoExecucao}</td>
+    `;
+    tabelaProcessosElement.querySelector("tbody").appendChild(tr);
+    
     }
     
     async executar() {
@@ -55,15 +60,33 @@ tabelaProcessosElement.querySelector("tbody").appendChild(tr);
   const tbody = tabelaProcessosElement.querySelector("tbody");
   tbody.innerHTML = "";
 }
-    
-    atualizarTabelaProcessos(id, tempoExecucao) {
-      const tabelaProcessosElement = document.getElementById("tabela-processos");
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td>${id}</td>
-        <td>${tempoExecucao}</td>
-      `;
-      tabelaProcessosElement.querySelector("tbody").appendChild(tr);
-    }
+atualizarTabelaProcessos(id, tempoExecucao) {
+  const tabelaProcessosElement = document.getElementById("tabela-processos");
+
+  // Verifica se a tabela já possui uma linha de cabeçalho
+  const theadExists = tabelaProcessosElement.querySelector("thead");
+
+  // Se não houver uma linha de cabeçalho, cria uma nova
+  if (!theadExists) {
+    const thead = document.createElement("thead");
+    const headerRow = document.createElement("tr");
+    headerRow.innerHTML = `
+    <td>cor</td>
+      <th>ID</th>
+      <th>Tempo de Execução</th>
+    `;
+    thead.appendChild(headerRow);
+    tabelaProcessosElement.appendChild(thead);
+  }
+
+  const tbody = tabelaProcessosElement.querySelector("tbody");
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+  <td>${cor}</td>
+    <td>${id}</td>
+    <td>${tempoExecucao}</td>
+  `;
+  tbody.appendChild(tr);
+}
     
   }
