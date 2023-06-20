@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LineLeap</title>
+    <link rel="shortcut icon" href="/LineLeap/public/imgs/principal/logo.ico">
+    <link rel="stylesheet" href="/LineLeap/public/css/principal.css">
+    <script src="/LineLeap/public/scripts/menuS.js"></script>
+    <script src="/LineLeap/public/scripts/seleciona.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <h1>
+                    LineLeap
+                </h1>
+            </div>
+
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="/LineLeap/public/line-lipe.html" class="nav-link">Sobre o LineLeap</a></li>
+                    <li class="nav-item"><a href="/LineLeap/public/quem-somos.html" class="nav-link">Sobre nós</a></li>
+                </ul>
+            </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()">
+                    <img class="icon" src="/LineLeap/public/imgs/principal/menu_white_36dp.svg">
+                </button>
+            </div>
+
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="/LineLeap/public/quem-somos.html" class="nav-link">Sobre nós</a></li>
+                <li class="nav-item"><a href="/LineLeap/public/line-lipe.html" class="nav-link">Sobre o LineLeap</a></li>
+            </ul>
+        </div>
+
+    </header>
+
+    <div class="bloco1-container">
+        <div class="bloco1-title">
+            <h4>
+                SELECIONAR ALGORITMO
+            </h4>
+        </div>
+        <div class="bloco1-select">
+            <form>
+                <input type="radio" name="bloco1-filas" value="2" onclick="quantFila()">
+                Múltiplas Filas (2 filas)
+                <input type="radio" name="bloco1-filas" class="bloco1-filas" value="3" onclick="quantFila()">
+                Múltiplas Filas (3 filas)
+                <ul class="bloco1-lista-azul">
+                    <li>
+                        <div class="bloco1-select-blue">
+                            FILA 1
+                            <input type="radio" name="bloco1-filas-tipo1" class="bloco1-radio-azul"
+                                onclick="selecionarFila('bloco1-filas-tipo1', this)">
+                            RR
+                            <input type="radio" name="bloco1-filas-tipo1" class="bloco1-radio-azul"
+                                onclick="selecionarFila('bloco1-filas-tipo1', this)">
+                            FIFO
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="bloco1-select-blue">
+                            FILA 2
+                            <input type="radio" name="bloco1-filas-tipo2" class="bloco1-radio-azul"
+                                onclick="selecionarFila('bloco1-filas-tipo2', this)">
+                            RR
+                            <input type="radio" name="bloco1-filas-tipo2" class="bloco1-radio-azul"
+                                onclick="selecionarFila('bloco1-filas-tipo2', this)">
+                            FIFO
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bloco1-select-blue">
+                            FILA 3
+                            <input type="radio" name="bloco1-filas-tipo3" class="bloco1-radio-azul"
+                                onclick="selecionarFila('bloco1-filas-tipo3', this)">
+                            RR
+                            <input type="radio" name="bloco1-filas-tipo3" class="bloco1-radio-azul"
+                                onclick="selecionarFila('bloco1-filas-tipo3', this)">
+                            FIFO
+                        </div>
+                    </li>
+
+                </ul>
+            </form>
+            <h4>
+                CRIAR PROCESSOS
+            </h4>
+            <form>
+                <input type="radio" name="bloco1-criar-processo">
+                Gerar processos com valores aleatórios.
+
+                <button class="bloco1-button-azul">
+                    Gerar Processos
+                </button>
+
+            </form>
+        </div>
+    </div>
+    <div class="bloco2-container">
+        <h4>
+            TABELA DE PROCESSOS
+        </h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>PID</th>
+                    <th>T. DE CHEGADA</th>
+                    <th>T. DE EXECUÇÃO</th>
+                    <th>PRIORIDADE </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src=" imgs/balls/blue-ball.png" class="balls">
+                    </td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/bluish-purple-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/brown-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/burnt-sienna-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/burnt-sienna-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/red-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/dark-blue-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/green-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/light-blue-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/orange-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/purple-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/yellow-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/dark-blue-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+
+        </table>
+        <div class="bloco2-buttons">
+            <button id="bloco2-button-azul">
+                <p>Iniciar</p>
+            </button>
+            <button id="bloco2-button-vermelho">
+                <p>Cancelar</p>
+            </button>
+        </div>
+    </div>
+
+    <div class="bloco3-container">
+        <div class="bloco3-title">
+            <h4>
+                <p>SIMULADOR DE ESCALONAMENTO DE PROCESSOS</p>
+                <br><br>
+            </h4>
+        </div>
+
+        <div class="info-bloco3">
+            <thead>
+                <tr>
+                    <th><span class="style-font-CPU">Uso da CPU</span></th><br><br>
+                    <th>tempo:</th><br>
+                    <th>processo:</th><br><br>
+                    <th><span class="style-font-filas">Filas de Aptos</span></th><br><br>
+
+                    <th>Processos fila 1 </th><br><br>
+                    <th>Processos fila 2 </th><br><br>
+                    <th>Processos fila 3 </th><br><br>
+
+                </tr>
+            </thead>
+        </div>
+    </div>
+
+    <div class="bloco2-container">
+        <h4>
+            TABELA DE RESULTADOS
+        </h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>PID</th>
+                    <th>T. DE CHEGADA</th>
+                    <th>T. DE EXECUÇÃO</th>
+                    <th>PRIORIDADE </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src=" imgs/balls/blue-ball.png" class="balls">
+                    </td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/bluish-purple-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/brown-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/burnt-sienna-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/burnt-sienna-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/red-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/dark-blue-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/green-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/light-blue-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/orange-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/purple-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/yellow-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="imgs/balls/dark-blue-ball.png" class="balls"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 LineLeap. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Nunito', sans-serif;
+}
+
+header {
+    background-color: #8297E2;
+    
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #ffffff;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0rem 1rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.login-button button {
+    border: none;
+    background-color: #DDE4FF;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+}
+
+.login-button button a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.bloco1-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 800px;
+    background: rgba(70, 102, 215, 0.1);
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.bloco1-title {
+    width: 100%;
+    margin-left: 13rem;
+
+}
+
+.bloco1-select {
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 13rem;
+}
+
+.bloco1-select form {
+    display: inline-block;
+}
+
+.bloco1-select-blue {
+
+    display: flex;
+    justify-content: space-between;
+    width: 10rem;
+    padding: 1rem;
+}
+
+.bloco1-radio-azul {
+    margin-left: auto;
+    background-color: #DDE4FF;
+}
+
+.bloco1-lista-azul {
+    display: flexbox;
+    list-style: none;
+
+}
+
+.bloco1-lista-azul li {
+    display: flex;
+    background-color: #DDE4FF;
+    margin-top: 1rem;
+    border-radius: 10px;
+}
+
+.bloco1-filas {
+    margin-left: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+h4 {
+    padding-bottom: 1.5rem;
+    padding-top: 3rem;
+}
+
+.bloco1-button-azul {
+    color: #ffffff;
+    display: flex;
+    border: none;
+    padding: 0.5rem 2rem;
+    background: #4666D7;
+    border-radius: 100px;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-left: 8rem;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #8297E2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-weight: bold;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+}
+
+tr:not(:last-child) td {
+    border-bottom: n
+}
+
+tr, td {
+    border-bottom: 1px solid black;
+}
+
+.balls {
+    width: 15px;
+    height: auto;
+}
+
+.bloco2-container {
+    display: flex;
+    justify-content: safe;
+    flex-wrap: wrap;
+    max-width: 800px;
+    background: rgba(70, 102, 215, 0.1);
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    
+}
+
+#bloco2-button-azul {
+    display: flex;
+    height: 3rem;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 2rem;
+    background: #4666D7;
+    border-radius: 100px;
+    width: 10rem;
+    cursor: pointer;
+    text-align: center;
+    margin: 10px;
+}
+
+#bloco2-button-vermelho {
+    display: flex;
+    height: 3rem;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 2rem;
+    background: #E72A2A;
+    border-radius: 100px;
+    width: 10rem;
+    cursor: pointer;
+    margin: 10px;
+    
+}
+
+.bloco2-buttons {
+    display: flex;
+    margin-left: 14.4rem;
+    margin-top: 3rem;
+
+}
+
+.bloco2-buttons button p {
+    margin: auto;
+}
+
+.bloco3-container{
+    display: flex;
+    justify-content: safe;
+    flex-wrap: wrap;
+    max-width: 800px;
+    background: rgba(70, 102, 215, 0.1);
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.bloco3-title {
+    width: 100%;
+    margin-left: 13rem;
+}
+
+.info-bloco3{
+    font-weight: bold;
+}
+
+.style-font-CPU{
+    font-size: 18px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.style-font-filas{
+    font-size: 18px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 850px) {
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+
+    .nav-item {
+        display: none;
+    }
+
+    .login-button {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 1.2rem;
+    }
+
+    .mobile-menu .login-button {
+        display: block;
+        padding: 1rem 2rem;
+    }
+
+    .mobile-menu .login-button button {
+        width: 100%;
+    }
+
+    .open {
+        display: block;
+    }
+
+    .bloco1-container{
+        max-width: 600px;
+    }
+
+    .bloco1-title{
+        margin-left: 16%;
+    }
+
+    .bloco1-select{
+        margin-left: 7rem;
+    }
+
+    .bloco1-select .bloco1-button-azul{
+        margin-left: 6rem;
+    }
+
+    .bloco2-container{
+        max-width: 600px;
+    }
+
+    .bloco2-buttons{
+        margin-left: 21%;
+    }
+
+    .bloco3-container{
+        max-width: 600px;
+    }
+
+    .bloco3-title{
+        margin-left: 5rem;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 700px) {
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+
+    .nav-item {
+        display: none;
+    }
+
+    .login-button {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 1.2rem;
+    }
+
+    .mobile-menu .login-button {
+        display: block;
+        padding: 1rem 2rem;
+    }
+
+    .mobile-menu .login-button button {
+        width: 100%;
+    }
+
+    .open {
+        display: block;
+    }
+
+    .bloco1-container{
+        max-width: 430px;
+    }
+    
+    .bloco1-title{
+        margin-left: 6%;
+    }
+
+    .bloco1-select{
+        margin-left: 6%;
+    }
+
+    .bloco1-select .bloco1-button-azul{
+        margin-left: 32%;
+    }
+
+    .bloco2-container{
+        max-width: 430px;
+    }
+
+    .bloco2-buttons{
+        margin-left: 10%;
+    }
+
+    .bloco3-container{
+        max-width: 430px;
+    }
+}
+
+@media only screen and (min-width: 330px) and (max-width: 500px) {
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+
+    .nav-item {
+        display: none;
+    }
+
+    .login-button {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 1.2rem;
+    }
+
+    .mobile-menu .login-button {
+        display: block;
+        padding: 1rem 2rem;
+    }
+
+    .mobile-menu .login-button button {
+        width: 100%;
+    }
+
+    .open {
+        display: block;
+    }
+
+    .bloco1-container{
+        max-width: 250px;
+    }
+    
+    .bloco1-title{
+        margin-left: 4%;
+    }
+
+    .bloco1-select{
+        margin-left: 4%;
+    }
+
+    .bloco1-filas{
+        margin-top: 5%;
+        margin-left: 0.3%;
+    }
+
+    .bloco1-lista-azul{
+        margin-top: 6%;
+    }
+
+    .bloco1-select .bloco1-button-azul{
+        margin-left: 25%;
+    }
+
+    .bloco2-container{
+        max-width: 250px;
+        overflow-x: auto;
+    }
+
+    .bloco2-buttons{
+        margin-left: 2%;
+    }
+
+    .bloco3-container{
+        max-width: 250px;
+        overflow-x: auto;
+    }
+
+    .bloco3-title{
+        top: 0%;
+        width: 90%;
+        font-size: 15px;
+        margin-left: 25px;
+    }
+
+    .info-bloco3{
+        margin-top: 5%;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+  
