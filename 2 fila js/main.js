@@ -1,15 +1,23 @@
 import { RoundRobin } from "./RoundRobin.js";
 import { FIFO } from "./fifo.js";
 
-const roundRobin1 = new RoundRobin(2);
+
  document.getElementById("btn-round-robin").addEventListener("click", async () => {
       document.getElementById("btn-round-robin").disabled = true;
 
+      const roundRobin1 = new RoundRobin(2);
       roundRobin1.adicionarProcesso(1, 10);
       roundRobin1.adicionarProcesso(2, 4);
       roundRobin1.adicionarProcesso(3, 6);
       roundRobin1.adicionarProcesso(4, 5);
       roundRobin1.adicionarProcesso(5, 12);
+
+      const roundRobin2 = new RoundRobin(2);
+      roundRobin2.adicionarProcesso(6, 10);
+      roundRobin2.adicionarProcesso(7, 4);
+      roundRobin2.adicionarProcesso(8, 6);
+      roundRobin2.adicionarProcesso(9, 5);
+      roundRobin2.adicionarProcesso(10, 12);
 
       const processosElement = document.getElementById("processos");
       const processosFinalizadosElement = document.getElementById("processos-finalizados");
@@ -32,12 +40,7 @@ const roundRobin1 = new RoundRobin(2);
           processosFinalizadosElement.appendChild(finalizadoDiv);
         }
       }
-      const roundRobin2 = new RoundRobin(2);
-      roundRobin2.adicionarProcesso(6, 10);
-      roundRobin2.adicionarProcesso(7, 4);
-      roundRobin2.adicionarProcesso(8, 6);
-      roundRobin2.adicionarProcesso(9, 5);
-      roundRobin2.adicionarProcesso(1, 12);
+      
 
       const processosElement2 = document.getElementById("processos");
       const processosFinalizadosElement2 = document.getElementById("processos-finalizados");
@@ -68,7 +71,7 @@ document.getElementById("btn-fifo").addEventListener("click", async () => {
 
   const fifo = new FIFO();
   fifo.limparTabelaProcessos();
-  fifo.adicionarProcesso(1, 10);
+  fifo.adicionarProcesso( 1, 10);
   fifo.adicionarProcesso(2, 4);
   fifo.adicionarProcesso(3, 6);
   fifo.adicionarProcesso(4, 5);

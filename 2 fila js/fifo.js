@@ -68,13 +68,31 @@ tabelaProcessosElement.querySelector("tbody").appendChild(tr);
     
     atualizarTabelaProcessos(id, tempoExecucao) {
       const tabelaProcessosElement = document.getElementById("tabela-processos");
+    
+      // Verifica se a tabela já possui uma linha de cabeçalho
+      const theadExists = tabelaProcessosElement.querySelector("thead");
+    
+      // Se não houver uma linha de cabeçalho, cria uma nova
+      if (!theadExists) {
+        const thead = document.createElement("thead");
+        const headerRow = document.createElement("tr");
+        headerRow.innerHTML = `
+          <th>ID</th>
+          <th>Tempo de Execução</th>
+        `;
+        thead.appendChild(headerRow);
+        tabelaProcessosElement.appendChild(thead);
+      }
+    
+      const tbody = tabelaProcessosElement.querySelector("tbody");
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${id}</td>
         <td>${tempoExecucao}</td>
       `;
-      tabelaProcessosElement.querySelector("tbody").appendChild(tr);
+      tbody.appendChild(tr);
     }
+    
 }
 
 function sleep(ms) {

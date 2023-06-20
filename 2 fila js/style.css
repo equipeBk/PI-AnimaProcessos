@@ -7,47 +7,54 @@
 
   .processo-1 {
     background-color: red;
+    border-radius: 10px;
   }
 
   .processo-2 {
     background-color: blue;
+    border-radius: 10px;
   }
 
   .processo-3 {
     background-color: green;
+    border-radius: 10px;
   }
 
   .processo-4 {
     background-color: rgb(119, 128, 0);
+    border-radius: 10px;
   }
 
   .processo-5 {
     background-color: rgb(128, 0, 70);
+    border-radius: 10px;
   }
 
   .processo-6 {
     background-color: rgb(53, 11, 11);
+    border-radius: 10px;
   }
 
   .processo-7 {
     background-color: rgb(153, 107, 65);
+    border-radius: 10px;
   }
 
   .processo-8 {
     background-color: rgb(158, 45, 1);
+    border-radius: 10px;
   }
 
   .processo-9 {
     background-color: rgba(23, 64, 80, 0.61);
+    border-radius: 10px;
   }
 
   .processo-10 {
     background-color: rgb(40, 2, 48);
+    border-radius: 10px;
   }
 
-  .processo-11 {
-    background-color: rgb(153, 79, 168);
-  }
 
   .finalizados {
     margin-top: 20px;
